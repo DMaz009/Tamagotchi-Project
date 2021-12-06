@@ -1,7 +1,7 @@
 console.log("Tomagotchi");
 
 class Pets {
-  constructor() {
+  constructor(hunger, sleep, boredom, age) {
     this.hunger =
     this.sleep =
     this.boredom =
@@ -10,6 +10,7 @@ class Pets {
 }
 
 
+const tomagotchi = new Pets ()
 
 
 class Game {
