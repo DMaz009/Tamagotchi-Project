@@ -1,3 +1,53 @@
-body {
-  background-color: yellow;
+html {
+  border: solid;
+  border-color: grey;
+  box-sizing: border-box;
+  margin: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
+
+@keyframes gradient {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
+
+header {
+  border: solid;
+  border-color: black;
+  box-sizing: border-box;
+  margin: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+
+
+footer {
+
+}
+
+
+
+
+
+
+
+
+
+/*  */
