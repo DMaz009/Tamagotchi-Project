@@ -1,28 +1,20 @@
 console.log("Tomagotchi");
 
 class Pets {
-  constructor(hunger, sleep, boredom, age) {
-    this.hunger =
-    this.sleep =
-    this.boredom =
-    this.age =
+  constructor() {
+    this.hunger = 2
+    this.sleep = 2
+    this.boredom = 2
+    this.age = 2
   }
+
 }
 
 
 const tomagotchi = new Pets ()
 
 
-class Game {
-  constructor () {
-
-  }
-}
-
-
-
-
-const app = {
+const game = {
 
 
 
