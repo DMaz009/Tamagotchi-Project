@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script:wght@400;700&family=Estonia&family=Fuzzy+Bubbles&family=Irish+Grover&family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ceviche+One&family=Dancing+Script:wght@400;700&family=Estonia&family=Fuzzy+Bubbles&family=Irish+Grover&family=Poiret+One&family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta name= "viewport" content="width=device-width, initial-scale=1.0">
     <title>TAMAGOTCHI GAME</title>
   </head>
@@ -12,32 +12,39 @@
       <h1 class= "headerName">TAMAGOTCHI GAME</h1>
       <h3 id= "headerStatement">Your own virtual pet!</h3>
       <nav>
-        <a href="#" class="active">About Me</a>
+        <a href="https://en.wikipedia.org/wiki/Tamagotchi" target="_blank" class="active">About Me</a>
 
     </header>
 
     <main class = "rules">
       <img class="character" src="https://i.imgur.com/IlBdBJJ.jpg" alt="image" />
+      <p id="popScore"></p>
       <h2>HOW TO PLAY</h2>
       <h4 class = "takeCare">Take care of your pet so they do not die!</h4>
       <h4 class = "rulesStatement">Tamagotchi dies if you ever hit 10 in any category.</h4>
       <ul class = "orderedList">
         <li class = "listRule">Feed when hungry, but not too much.</li>
-        <li class= "metrics">Hunger (1 - 10 scale)</li>
+        <li class= "metrics">Live Hunger Score (1 - 10 scale):</li>
+        <li class= "metrics" id="hungerScore">2</li>
         <li class = "listRule">Turn off lights to ensure they get adequate sleep.</li>
-        <li class= "metrics">Sleepiness (1 - 10 scale)</li>
+        <li class= "metrics">Live Sleepiness Score (1 - 10 scale):</li>
+        <li class= "metrics" id="sleepScore">2</li>
         <li class= "listRule">Play with your pet so they do not die of boredom.</li>
-        <li class= "metrics">Boredom (1 - 10 scale).</li>
-        <li class= "listRule">Age.</li>
-        <li class= "metrics">Your Tomagotchi is only 2 years old!</li>
+        <li class= "metrics">Live Boredom Score (1 - 10 scale):</li>
+        <li class= "metrics" id="playScore">2</li>
+        <li class= "listRule">Age</li>
+        <li class= "metrics">Your Tamagotchi is:</li>
+        <li class= "metrics" id="ageScore">2</li>
       </ul>
+
+
 
     </main>
 
     <footer class="footer">
-        <button class= "buttons" name="button">Feed Your Tomagotchi</button>
-        <button class= "buttons" name="button">Turn Off Light</button>
-        <button class= "buttons" name="button">Play Time!</button>
+        <button id="feedBtn" class= "buttons" name="button">Feed Your Tomagotchi</button>
+        <button id="sleepBtn" class= "buttons" name="button">Turn Off Light</button>
+        <button id="playBtn" class= "buttons" name="button">Play Time!</button>
 
     </footer>
 
