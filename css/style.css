@@ -55,7 +55,7 @@ footer{
   max-width: 200px;
   max-height: 200px;
   animation-name: rotate;
-  animation-duration: 0.7s;
+  animation-duration: 1.5s;
   animation-direction: reverse;
  }
 
@@ -83,9 +83,10 @@ footer {
 
 #popScore {
   /* float: right; */
-  margin: 10px 50px 10px 10px;
+  margin: 50px 50px 10px 10px;
   position: absolute;
-  right: 10px; bottom: 0px;
+  max-width: 300px;
+  right: 10px; bottom: -115px;
   /* z-index: 4; */
   font-family:'Press Start 2P', cursive;
 }

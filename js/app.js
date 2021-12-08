@@ -1,11 +1,13 @@
-console.log("Tomagotchi");
+console.log("Tamagotchi");
+
+
 
 class Pets {
   constructor(name) {
     this.name= name
-    this.hunger = 2
-    this.sleep = 2
-    this.boredom = 2
+    this.hunger = 6
+    this.sleep = 6
+    this.boredom = 6
     this.age = 2
   }
 
@@ -39,8 +41,18 @@ class Pets {
 
 }
 
+//Instance of Class
 const tom = new Pets ()
 
+const print = () => {
+  let userName = document.getElementById("start").value
+  console.log(userName);
+  alert(userName)
+}
+
+
+////////////////
+//DOM SELECTIONS//
 const hungerScore = document.querySelector('#hungerScore')
 
 const sleepScore = document.querySelector('#sleepScore')
@@ -48,37 +60,53 @@ const sleepScore = document.querySelector('#sleepScore')
 const playScore = document.querySelector('#playScore')
 
 const feedBtn = document.querySelector('#feedBtn')
+
 const popScore = document.querySelector('#popScore')
+
+const sleepBtn = document.querySelector('#sleepBtn')
+
+const night = document.querySelector('.character')
+
+const playBtn = document.querySelector('#playBtn')
+
+
+
+// EVENTS ////
+
+
 feedBtn.addEventListener('click', () => {
   console.log("Eating!");
   // alert("Eating! Check your scores.")
   tom.feed()
-  popScore.innerText = `Eating! Check your scores ${tom.hunger}`
+  popScore.innerText = `Eating! Yum Yum. Hunger score ${tom.hunger}`
 })
 
-const sleepBtn = document.querySelector('#sleepBtn')
+
 sleepBtn.addEventListener('click', () => {
-  console.log("Sleeping!");
-  // alert("Sleeping! Check your scores.")
+  night.style.opacity = "0";
+
+  setTimeout(
+    () => {
+    night.style.opacity = "100%";}
+  , 7000);
+
   tom.sleeping()
-  popScore.innerText = `Sleeping! Check your scores ${tom.sleep}`
+  popScore.innerText = `You sent your Tamagotchi to bed. They will be back soon! Sleep score ${tom.sleep}`
+
 })
 
-const playBtn = document.querySelector('#playBtn')
 playBtn.addEventListener('click', () => {
   console.log("Playing!");
   // alert("Sleeping! Check your scores.")
   tom.playing()
-  popScore.innerText = `Playing! Check your scores ${tom.boredom}`
+  popScore.innerText = `Yaayyy Playtime! Boredom score ${tom.boredom}`
 })
 
-const game = {
 
 
 
 
 
-}
 
 
 

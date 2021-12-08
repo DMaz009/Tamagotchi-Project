@@ -13,7 +13,11 @@
       <h3 id= "headerStatement">Your own virtual pet!</h3>
       <nav>
         <a href="https://en.wikipedia.org/wiki/Tamagotchi" target="_blank" class="active">About Me</a>
+        <p>Enter your Tamagotchi name, then click "Submit" to start the game</p>
 
+        <form id="name">Tamagotchi name: <input id="start" type="text" name="name"><br>
+          <input id= "nameInput" type="button" value="Submit" onclick="print()">
+        </form>
     </header>
 
     <main class = "rules">
@@ -25,13 +29,13 @@
       <ul class = "orderedList">
         <li class = "listRule">Feed when hungry, but not too much.</li>
         <li class= "metrics">Live Hunger Score (1 - 10 scale):</li>
-        <li class= "metrics" id="hungerScore">2</li>
+        <li class= "metrics" id="hungerScore">6</li>
         <li class = "listRule">Turn off lights to ensure they get adequate sleep.</li>
         <li class= "metrics">Live Sleepiness Score (1 - 10 scale):</li>
-        <li class= "metrics" id="sleepScore">2</li>
+        <li class= "metrics" id="sleepScore">6</li>
         <li class= "listRule">Play with your pet so they do not die of boredom.</li>
         <li class= "metrics">Live Boredom Score (1 - 10 scale):</li>
-        <li class= "metrics" id="playScore">2</li>
+        <li class= "metrics" id="playScore">6</li>
         <li class= "listRule">Age</li>
         <li class= "metrics">Your Tamagotchi is:</li>
         <li class= "metrics" id="ageScore">2</li>
