@@ -1,74 +1,85 @@
 console.log("Tamagotchi");
 
 let userName = "";
+// let timer = "";
 
 class Tamagotchi {
-  constructor(userName) {
-    this.userName= userName
-    this.hunger = 6
-    this.sleep = 6
-    this.boredom = 6
-    this.age = 2
-  }
+    constructor(userName, hunger, sleep, boredom, age) {
+        this.userName = userName
+        this.hunger = hunger
+        this.sleep = sleep
+        this.boredom = boredom
+        this.age = age
+    }
 
-  feed () {
-    this.hunger -= 3
-    this.sleep += 1
-    this.boredom += 1
-    console.log(this.hunger, this.age, this.sleep);
-    hungerScore.innerText = this.hunger;
-    sleepScore.innerText = this.sleep;
-    playScore.innerText = this.boredom;
-  }
+    feed() {
+        this.hunger -= 3
+        this.sleep += 1
+        this.boredom += 1
+        console.log(this.hunger, this.age, this.sleep);
+        hungerScore.innerText = this.hunger;
+        sleepScore.innerText = this.sleep;
+        playScore.innerText = this.boredom;
+    }
 
-  sleeping () {
-    console.log("Lights Out. Sleepy Time!");
-    this.sleep -= 3
-    this.hunger += 1
-    this.boredom += 1
-    console.log(this.hunger, this.age, this.sleep);
-    sleepScore.innerText = this.sleep;
-    hungerScore.innerText = this.hunger;
-    playScore.innerText = this.boredom;
-  }
+    sleeping() {
+        console.log("Lights Out. Sleepy Time!");
+        this.sleep -= 3
+        this.hunger += 1
+        this.boredom += 1
+        console.log(this.hunger, this.age, this.sleep);
+        sleepScore.innerText = this.sleep;
+        hungerScore.innerText = this.hunger;
+        playScore.innerText = this.boredom;
+    }
 
-  playing () {
-    console.log("Let's Play!");
-    this.boredom -= 3
-    this.hunger += 1
-    this.sleep += 1
-    console.log(this.hunger, this.sleep, this.boredom);
-    playScore.innerText = this.boredom;
-    sleepScore.innerText = this.sleep;
-    hungerScore.innerText = this.hunger;
+    playing() {
+        console.log("Let's Play!");
+        this.boredom -= 3
+        this.hunger += 1
+        this.sleep += 1
+        console.log(this.hunger, this.sleep, this.boredom);
+        playScore.innerText = this.boredom;
+        sleepScore.innerText = this.sleep;
+        hungerScore.innerText = this.hunger;
 
-  }
+    }
 
-  aging () {
-    this.age += 1
-    this.hunger += 1
-    this.sleep += 1
-    console.log(this.hunger, this.age, this.sleep);
-    ageScore.innerText = this.age
-    return aging
-  }
+    aging() {
+        this.age += 1
+        this.hunger += 1
+        this.sleep += 1
+        console.log(this.hunger, this.age, this.sleep);
+        ageScore.innerText = this.age
+        sleepScore.innerText = this.sleep;
+        hungerScore.innerText = this.hunger;
+    }
 }
 
-
+class Pet extends Tamagotchi {
+    constructor(userName, hunger, sleep, boredom, age) {
+        super(userName, hunger, sleep, boredom, age)
+        this.userName = userName
+        this.hunger = 2
+        this.sleep = 2
+        this.boredom = 2
+        this.age = 0
+    }
+}
 
 const naming = () => {
-  userName = document.getElementById("start").value
-  console.log(userName);
-  popScore.innerText = (`Your Tamagotchi name is ${userName}! The game has started!`)
-  return userName
+    userName = document.getElementById("start").value
+    tom.userName = userName
+    console.log(userName);
+    popScore.innerText = (`Your Tamagotchi name is ${userName}! The game has started!`)
+    return userName
 }
-
 
 
 
 
 //Instance of Tamagotchi Class
-const tom = new Tamagotchi(userName)
+const tom = new Pet("")
 
 
 
@@ -105,40 +116,40 @@ const title = document.querySelector('title')
 
 submitBtn.addEventListener("click", () => {
  naming()
- setInterval(() => {
-  tom.age ++
-  console.log(tom.age)
-  ageScore.innerText = tom.age
-  sleepScore.innerText = this.sleep;
-  hungerScore.innerText = this.hunger;
-}, 3000);
+ let timer = setInterval(() => {
+   tom.aging()
+   if (tom.age > 4) {
+     console.log("Gameover");
+     clearInterval(timer)
+   }
+}, 5000);
 })
 
 feedBtn.addEventListener('click', () => {
-  console.log("Eating!");
-  // alert("Eating! Check your scores.")
-  tom.feed()
-  popScore.innerText = `Eating! Yum Yum. Hunger score ${tom.hunger}`
+    console.log("Eating!");
+    // alert("Eating! Check your scores.")
+    tom.feed()
+    popScore.innerText = `Eating! Yum Yum. Hunger score ${tom.hunger}`
 })
 
 
 sleepBtn.addEventListener('click', () => {
-  night.style.opacity = "0";
+    night.style.opacity = "0";
 
-  setTimeout(() => {
-    night.style.opacity = "100%";}
-  , 7000);
+    setTimeout(() => {
+        night.style.opacity = "100%";
+    }, 7000);
 
-  tom.sleeping()
-  popScore.innerText = `You sent your Tamagotchi to bed. They will be back soon! Sleep score ${tom.sleep}`
+    tom.sleeping()
+    popScore.innerText = `You sent your Tamagotchi to bed. They will be back soon! Sleep score ${tom.sleep}`
 
 })
 
 playBtn.addEventListener('click', () => {
-  console.log("Playing!");
-  // alert("Sleeping! Check your scores.")
-  tom.playing()
-  popScore.innerText = `Yaayyy Playtime! Boredom score ${tom.boredom}`
+    console.log("Playing!");
+    // alert("Sleeping! Check your scores.")
+    tom.playing()
+    popScore.innerText = `Yaayyy Playtime! Boredom score ${tom.boredom}`
 })
 
 
