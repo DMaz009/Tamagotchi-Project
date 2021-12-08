@@ -1,10 +1,10 @@
 console.log("Tamagotchi");
 
+let userName = "";
 
-
-class Pets {
-  constructor(name) {
-    this.name= name
+class Tamagotchi {
+  constructor(userName) {
+    this.userName= userName
     this.hunger = 6
     this.sleep = 6
     this.boredom = 6
@@ -12,44 +12,68 @@ class Pets {
   }
 
   feed () {
-    this.hunger -= 2
-    this.age += 1
+    this.hunger -= 3
     this.sleep += 1
+    this.boredom += 1
     console.log(this.hunger, this.age, this.sleep);
     hungerScore.innerText = this.hunger;
+    sleepScore.innerText = this.sleep;
+    playScore.innerText = this.boredom;
   }
 
   sleeping () {
     console.log("Lights Out. Sleepy Time!");
-    this.sleep -= 2
+    this.sleep -= 3
     this.hunger += 1
-    this.age += 1
+    this.boredom += 1
     console.log(this.hunger, this.age, this.sleep);
     sleepScore.innerText = this.sleep;
+    hungerScore.innerText = this.hunger;
+    playScore.innerText = this.boredom;
   }
 
   playing () {
     console.log("Let's Play!");
-    this.boredom -= 2
+    this.boredom -= 3
     this.hunger += 1
     this.sleep += 1
-    this.age += 1
-    console.log(this.hunger, this.age, this.sleep, this.boredom);
+    console.log(this.hunger, this.sleep, this.boredom);
     playScore.innerText = this.boredom;
+    sleepScore.innerText = this.sleep;
+    hungerScore.innerText = this.hunger;
 
   }
 
+  aging () {
+    this.age += 1
+    this.hunger += 1
+    this.sleep += 1
+    console.log(this.hunger, this.age, this.sleep);
+    ageScore.innerText = this.age
+    return aging
+  }
 }
 
-//Instance of Class
-const tom = new Pets ()
 
-const print = () => {
-  let userName = document.getElementById("start").value
+
+const naming = () => {
+  userName = document.getElementById("start").value
   console.log(userName);
-  alert(userName)
+  popScore.innerText = (`Your Tamagotchi name is ${userName}! The game has started!`)
+  return userName
 }
 
+
+
+
+
+//Instance of Tamagotchi Class
+const tom = new Tamagotchi(userName)
+
+
+
+
+console.log(tom.userName);
 
 ////////////////
 //DOM SELECTIONS//
@@ -58,6 +82,8 @@ const hungerScore = document.querySelector('#hungerScore')
 const sleepScore = document.querySelector('#sleepScore')
 
 const playScore = document.querySelector('#playScore')
+
+const ageScore = document.querySelector('#ageScore')
 
 const feedBtn = document.querySelector('#feedBtn')
 
@@ -69,10 +95,24 @@ const night = document.querySelector('.character')
 
 const playBtn = document.querySelector('#playBtn')
 
+const submitBtn = document.querySelector('#nameInput');
+
+const title = document.querySelector('title')
+
 
 
 // EVENTS ////
 
+submitBtn.addEventListener("click", () => {
+ naming()
+ setInterval(() => {
+  tom.age ++
+  console.log(tom.age)
+  ageScore.innerText = tom.age
+  sleepScore.innerText = this.sleep;
+  hungerScore.innerText = this.hunger;
+}, 3000);
+})
 
 feedBtn.addEventListener('click', () => {
   console.log("Eating!");
@@ -85,8 +125,7 @@ feedBtn.addEventListener('click', () => {
 sleepBtn.addEventListener('click', () => {
   night.style.opacity = "0";
 
-  setTimeout(
-    () => {
+  setTimeout(() => {
     night.style.opacity = "100%";}
   , 7000);
 
