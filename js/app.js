@@ -1,10 +1,43 @@
 console.log("Tamagotchi");
 
+// Global Variables
+
 let userName = "";
 // let timer = "";
 let anim = "";
 
-class Tamagotchi {
+////////////////
+//DOM SELECTIONS//
+
+const hungerScore = document.querySelector('#hungerScore')
+
+const sleepScore = document.querySelector('#sleepScore')
+
+const playScore = document.querySelector('#playScore')
+
+const ageScore = document.querySelector('#ageScore')
+
+const feedBtn = document.querySelector('#feedBtn')
+
+const popScore = document.querySelector('#popScore')
+
+const sleepBtn = document.querySelector('#sleepBtn')
+
+const night = document.querySelector('.character')
+
+const aged = document.querySelector('.character1')
+
+const morphed = document.querySelector('.character2')
+
+const playBtn = document.querySelector('#playBtn')
+
+const submitBtn = document.querySelector('#nameInput');
+
+const title = document.querySelector('title')
+
+// GAME CLASS // ...
+
+class Game {
     constructor(userName, hunger, sleep, boredom, age) {
         this.userName = userName,
         this.hunger = hunger,
@@ -64,7 +97,7 @@ class Tamagotchi {
 
 }
 
-class Pet extends Tamagotchi {
+class Tamagotchi extends Game {
     constructor(userName, hunger, sleep, boredom, age) {
         super(userName, hunger, sleep, boredom, age)
         this.userName = userName
@@ -84,43 +117,9 @@ const naming = () => {
 }
 
 
-// const morph = () => {
-//   if
-// }
-
-
 //Instance of Tamagotchi Class
-const tom = new Pet("", 5, 2, 4, 1)
 
-
-
-////////////////
-//DOM SELECTIONS//
-const hungerScore = document.querySelector('#hungerScore')
-
-const sleepScore = document.querySelector('#sleepScore')
-
-const playScore = document.querySelector('#playScore')
-
-const ageScore = document.querySelector('#ageScore')
-
-const feedBtn = document.querySelector('#feedBtn')
-
-const popScore = document.querySelector('#popScore')
-
-const sleepBtn = document.querySelector('#sleepBtn')
-
-const night = document.querySelector('.character')
-
-const aged = document.querySelector('.character1')
-
-const morphed = document.querySelector('.character2')
-
-const playBtn = document.querySelector('#playBtn')
-
-const submitBtn = document.querySelector('#nameInput');
-
-const title = document.querySelector('title')
+const tom = new Tamagotchi("", 5, 2, 4, 1)
 
 
 
