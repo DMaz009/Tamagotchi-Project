@@ -1,96 +1,168 @@
 
+  /* background-image: url("https://media4.giphy.com/media/huJnwIfL81xHLc8TQr/giphy.gif?cid=ecf05e47s50senl5cbmxpxxebxfuezgjxokjqc22ngbfamua&rid=giphy.gif&ct=g");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+} */
 
-body{
-  color: rgba(35, 35, 38, 100);
-  font-family: 'Fuzzy Bubbles', cursive;
-  border: solid 10px;
-  border-color: grey;
-  box-sizing: content-box;
-  margin: 10px 20px 20px 20px;
-  padding: 20px 20px 20px 20px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 200% 200%;
-  animation: gradient 10s ease infinite;
+
+body {
+    color: rgba(35, 35, 38, 100);
+    font-family: 'Cormorant Garamond', serif;
+    border: solid 10px;
+    border-color: black;
+    box-sizing: content-box;
+    margin: 10px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
-0% {
-    background-position: 0% 50%;
-}
-50% {
-    background-position: 100% 50%;
-}
-100% {
-    background-position: 0% 50%;
-}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
 header {
-  border: solid;
-  border-color: black;
-  box-sizing: border-box;
-  margin: 20px 20px 60px 20px;
-  padding: 10px 10px 30px 10px;
-  text-align: center;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    border: solid;
+    border-color: black;
+    box-sizing: border-box;
+    margin: 10px 10px 40px 10px;
+    padding: 10px 10px 30px 10px;
+    text-align: center;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+main {
+    font-family: 'Cinzel Decorative', cursive;
+    /* padding: 10px 10px 30px 10px; */
 }
 
 
-footer{
-
-}
+footer {}
 
 .listRule {
-  padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 .character {
-  float: right;
-  border-radius: 50%;
-  margin: 20px 100px 100px 20px;
-  max-width: 200px;
-  max-height: 200px;
-  animation-name: rotate;
-  animation-duration: 1.5s;
-  animation-direction: reverse;
- }
-
- @keyframes rotate {
-   0% {
-     transform: rotate(0);
-   }
-   100% {
-     transform: rotate(360deg);
-   }
- }
-
-footer {
-
+    position: relative;
+    float: right;
+    right: 5px;
+    z-index: 4;
+    border-radius: 100%;
+    margin: 20px 100px 100px 20px;
+    max-width: 230px;
+    max-height: 230px;
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#character1 {
+    position: absolute;
+    float: right;
+    right: 90px;
+    z-index: -4;
+    border-radius: 100%;
+    margin: 60px 100px 100px 20px;
+    max-width: 170px;
+    max-height: 170px;
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#character2 {
+    position: absolute;
+    float: right;
+    right: 75px;
+    z-index: -4;
+    border-radius: 60%;
+    margin: 50px 100px 100px 20px;
+    max-width: 200px;
+    max-height: 200px;
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+footer {}
+
 .buttons {
-  margin: 10px 10px 10px 10px;
-  width: 100px;
+    margin: 10px 10px 10px 10px;
+    width: 100px;
 }
 
 .metrics {
-  margin-left: 30px;
+    margin-left: 30px;
+    font-weight: 200;
 }
 
 #popScore {
-  /* float: right; */
-  margin: 50px 50px 10px 10px;
-  position: absolute;
-  max-width: 300px;
-  right: 10px; bottom: -115px;
-  /* z-index: 4; */
-  font-family:'Press Start 2P', cursive;
+    /* float: right; */
+    margin: 50px 50px 10px 10px;
+    position: absolute;
+    max-width: 400px;
+    right: 20px;
+    bottom: -80px;
+    font-weight: 900;
+    /* z-index: 4; */
+    font-family: 'Black Ops One', cursive;
 }
 
+.scores {
+    font-weight: 200;
+    font-family: 'Black Ops One', cursive;
+}
 
+.form {
+
+}
 
 /*  */
